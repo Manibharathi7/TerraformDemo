@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "=2.99.0"
+      version = "3.34.0"
     }
   }
 }
@@ -12,19 +12,19 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
+  name     = "example1-resources"
+  location = "West US"
 }
 
 resource "azurerm_container_registry" "example" {
-  name                = "containerRegistry19999"
+  name                = "containerRegistry199991"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
   sku                 = "Premium"
 }
 
 resource "azurerm_kubernetes_cluster" "example" {
-  name                = "example-aks1236"
+  name                = "example-aks12361"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   dns_prefix          = "exampleaks123"
